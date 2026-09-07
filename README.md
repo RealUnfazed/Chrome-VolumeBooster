@@ -51,7 +51,7 @@ The gain can be increased from:
 1. Download or clone this repository.
 
 ```bash
-git clone https://github.com/realunfazed/volume-booster.git
+git clone https://github.com/RealUnfazed/Chrome-VolumeBooster.git
 ```
 
 2. Open Chrome and navigate to:
