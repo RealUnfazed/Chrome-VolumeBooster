@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Volume Booster</title>
+
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+
+  <body>
+    <main class="popup">
+      <!-- Header -->
+      <header class="header">
+        <div class="header-icon">
+          <span class="speaker-icon">🔊</span>
+        </div>
+
+        <div class="header-text">
+          <h1>Volume Booster</h1>
+          <p>Boost your current tab audio</p>
+        </div>
+      </header>
+
+      <!-- Current Tab -->
+      <section class="tab-info">
+        <div class="tab-info-label">CURRENT TAB</div>
+
+        <div id="tabTitle" class="tab-title">Loading...</div>
+      </section>
+
+      <!-- Enable / Disable -->
+      <section class="control-section">
+        <div class="control-row">
+          <div class="control-text">
+            <span class="control-title"> Volume Boost </span>
+
+            <span id="statusText" class="control-description"> Disabled </span>
+          </div>
+
+          <label class="switch">
+            <input type="checkbox" id="enableToggle" />
+
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Volume -->
+      <section class="volume-section">
+        <div class="volume-header">
+          <span class="volume-label"> BOOST LEVEL </span>
+
+          <span id="gainValue" class="gain-value"> 100% </span>
+        </div>
+
+        <div class="range-container">
+          <input
+            type="range"
+            id="gainSlider"
+            class="gain-slider"
+            min="100"
+            max="600"
+            step="10"
+            value="100"
+          />
+
+          <div class="range-labels">
+            <span>100%</span>
+
+            <span>200%</span>
+
+            <span>300%</span>
+
+            <span>400%</span>
+
+            <span>500%</span>
+
+            <span>600%</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Limiter -->
+      <section class="control-section limiter-section">
+        <div class="control-row">
+          <div class="control-text">
+            <span class="control-title"> Limiter </span>
+
+            <span class="control-description">
+              Reduce distortion at high volume
+            </span>
+          </div>
+
+          <label class="switch">
+            <input type="checkbox" id="limiterToggle" checked />
+
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Status -->
+      <div id="errorMessage" class="error-message" hidden></div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <span> Volume Booster </span>
+
+        <span> v1.0.0 </span>
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

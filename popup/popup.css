@@ -1,0 +1,505 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 360px;
+  min-height: 480px;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+  background: #0f1117;
+  color: #f5f7fa;
+
+  overflow: hidden;
+}
+
+.popup {
+  width: 360px;
+  min-height: 480px;
+
+  padding: 20px;
+
+  background: linear-gradient(180deg, #151821 0%, #0f1117 100%);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Header
+|--------------------------------------------------------------------------
+*/
+
+.header {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin-bottom: 20px;
+}
+
+.header-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #242936;
+
+  border: 1px solid #303644;
+
+  flex-shrink: 0;
+}
+
+.speaker-icon {
+  font-size: 22px;
+
+  line-height: 1;
+}
+
+.header-text {
+  min-width: 0;
+}
+
+.header-text h1 {
+  font-size: 18px;
+  font-weight: 700;
+
+  line-height: 1.2;
+
+  color: #ffffff;
+}
+
+.header-text p {
+  margin-top: 4px;
+
+  font-size: 12px;
+  font-weight: 400;
+
+  color: #8e96a8;
+
+  white-space: nowrap;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Current Tab
+|--------------------------------------------------------------------------
+*/
+
+.tab-info {
+  padding: 12px 14px;
+
+  margin-bottom: 14px;
+
+  border-radius: 11px;
+
+  background: #191d26;
+
+  border: 1px solid #282e3a;
+}
+
+.tab-info-label {
+  margin-bottom: 5px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+
+  color: #747d90;
+}
+
+.tab-title {
+  font-size: 12px;
+  font-weight: 500;
+
+  color: #cdd2dc;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Generic Control Section
+|--------------------------------------------------------------------------
+*/
+
+.control-section {
+  padding: 15px;
+
+  margin-bottom: 12px;
+
+  border-radius: 12px;
+
+  background: #191d26;
+
+  border: 1px solid #282e3a;
+}
+
+.control-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+}
+
+.control-text {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.control-title {
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #f1f3f7;
+}
+
+.control-description {
+  margin-top: 4px;
+
+  font-size: 11px;
+  line-height: 1.35;
+
+  color: #7f8798;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Toggle Switch
+|--------------------------------------------------------------------------
+*/
+
+.switch {
+  position: relative;
+
+  width: 44px;
+  height: 24px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  cursor: pointer;
+}
+
+.switch input {
+  position: absolute;
+
+  width: 0;
+  height: 0;
+
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+
+  inset: 0;
+
+  border-radius: 999px;
+
+  background: #303643;
+
+  border: 1px solid #3a4150;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.slider::before {
+  content: "";
+
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  left: 2px;
+  top: 2px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+
+  transition: transform 0.2s ease;
+}
+
+.switch input:checked + .slider {
+  background: #4f7cff;
+
+  border-color: #5b86ff;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Volume Section
+|--------------------------------------------------------------------------
+*/
+
+.volume-section {
+  padding: 15px;
+
+  margin-bottom: 12px;
+
+  border-radius: 12px;
+
+  background: #191d26;
+
+  border: 1px solid #282e3a;
+}
+
+.volume-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.volume-label {
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+
+  color: #7f8798;
+}
+
+.gain-value {
+  min-width: 55px;
+
+  text-align: right;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Range Slider
+|--------------------------------------------------------------------------
+*/
+
+.range-container {
+  width: 100%;
+}
+
+.gain-slider {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 100%;
+  height: 5px;
+
+  display: block;
+
+  border-radius: 999px;
+
+  outline: none;
+
+  background: #303643;
+
+  cursor: pointer;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Range Slider - Chrome / Chromium
+|--------------------------------------------------------------------------
+*/
+
+.gain-slider::-webkit-slider-runnable-track {
+  height: 5px;
+
+  border-radius: 999px;
+
+  background: #303643;
+}
+
+.gain-slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 17px;
+  height: 17px;
+
+  margin-top: -6px;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  border: 3px solid #4f7cff;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+
+  cursor: pointer;
+}
+
+.gain-slider:hover::-webkit-slider-thumb {
+  transform: scale(1.08);
+}
+
+/*
+|--------------------------------------------------------------------------
+| Range Labels
+|--------------------------------------------------------------------------
+*/
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 9px;
+
+  padding: 0 1px;
+}
+
+.range-labels span {
+  font-size: 9px;
+
+  color: #666e7e;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Limiter
+|--------------------------------------------------------------------------
+*/
+
+.limiter-section {
+  margin-bottom: 14px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Error Message
+|--------------------------------------------------------------------------
+*/
+
+.error-message {
+  padding: 10px 12px;
+
+  margin-bottom: 12px;
+
+  border-radius: 9px;
+
+  background: #2a1b20;
+
+  border: 1px solid #5b2a35;
+
+  color: #ff9aa9;
+
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.error-message[hidden] {
+  display: none;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Disabled State
+|--------------------------------------------------------------------------
+*/
+
+.volume-section.disabled {
+  opacity: 0.55;
+}
+
+.volume-section.disabled .gain-slider {
+  cursor: not-allowed;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Footer
+|--------------------------------------------------------------------------
+*/
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 2px;
+
+  font-size: 9px;
+
+  color: #555d6d;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Focus
+|--------------------------------------------------------------------------
+*/
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid #5b86ff;
+  outline-offset: 2px;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Animations
+|--------------------------------------------------------------------------
+*/
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.popup {
+  animation: fadeIn 0.15s ease-out;
+}
+
+/*
+|--------------------------------------------------------------------------
+| Active State
+|--------------------------------------------------------------------------
+*/
+
+.switch:active .slider::before {
+  transform: scale(0.92);
+}
+
+.switch input:checked:active + .slider::before {
+  transform: translateX(20px) scale(0.92);
+}
